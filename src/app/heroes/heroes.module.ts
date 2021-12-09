@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroesRoutingModule } from './heroes-routing.module';
-import { FlexLayoutModule } from '@angular/flex-layout'; // estilos de flex-loyout 
+//import { FlexLayoutModule } from '@angular/flex-layout'; // estilos de flex-loyout 
 import { MaterialModule } from '../material/material.module'; // modulo de componentes de angular material 
 
 
@@ -24,9 +24,9 @@ import { ListadoComponent } from './pages/listado/listado.component';
   ],
   imports: [
     CommonModule,
-    FlexLayoutModule, // flex-layout https://github.com/angular/flex-layout https://www.npmjs.com/package/@angular/flex-layout 
+    //FlexLayoutModule, // flex-layout https://github.com/angular/flex-layout https://www.npmjs.com/package/@angular/flex-layout 
     HeroesRoutingModule, // rutas hijas 
-    MaterialModule
+    MaterialModule // angular material 
   ]
 })
 export class HeroesModule { }

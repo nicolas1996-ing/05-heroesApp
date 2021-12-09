@@ -1,1 +1,75 @@
-<router-outlet></router-outlet>
+<!-- renderizacion de componentes asociados a heores-routing.module.ts -->
+<!-- <router-outlet></router-outlet> -->
+
+<!-- <h1>hola</h1> -->
+
+<!-- componente principal -->
+<mat-sidenav-container fullscreen>
+
+    <!-- 
+        mode="push" - correr el contenido del sidenav a la derecha 
+        (click)="sidenav.toggle()" - expandir/cerrar el sidenav 
+     -->
+    <!-- menú lateral -->
+    <mat-sidenav #sidenav mode="push">
+
+        <!-- componente 1. -->
+        <mat-toolbar color="warn">
+            <span>Menú</span>
+
+            <!-- espaciado entre componentes -->
+            <span class="spacer"></span>
+
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>
+                    menu
+                </mat-icon>
+
+            </button>
+        </mat-toolbar>
+
+        <!-- componente 2. -->
+        <mat-nav-list>
+            <!-- navegacion hacia las rutas hijas -->
+            <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>label</mat-icon>
+                <span>Listado de Héroes</span>
+            </a>
+            <a routerLink="./agregar" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>add</mat-icon>
+                <span>Añadir Heroe</span>
+            </a>
+
+            <a routerLink="./buscar" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>search</mat-icon>
+                <span>Buscar Heroe</span>
+            </a>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <!-- menu superior -->
+    <!-- color : primary-accent-warn -->
+    <mat-toolbar color="warn">
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>
+                menu
+            </mat-icon>
+        </button>
+
+        <span class="spacer"></span>
+
+        <button mat-button>
+            Logout
+        </button>
+
+    </mat-toolbar>
+
+    <div class="container">
+        <!-- renderizado rutas hijas -->
+        <router-outlet></router-outlet>
+
+    </div>
+
+</mat-sidenav-container>
